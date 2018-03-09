@@ -162,9 +162,9 @@ class RandomRotation(object):
         assert img.size == mask.size
         angle = np.random.uniform(self.degrees[0], self.degrees[1])
         if self.resample:
-            return img.rotate(angle, Image.BILINEAR, self.expand, self.center),                     mask.rotate(angle, Image.NEAREST, self.expand, self.center)
+            return img.rotate(angle, Image.BILINEAR, self.expand, self.center), mask.rotate(angle, Image.NEAREST, self.expand, self.center)
         else:
-            return img.rotate(angle, self.resample, self.expand, self.center),                     mask.rotate(angle, self.resample, self.expand, self.center)
+            return img.rotate(angle, self.resample, self.expand, self.center), mask.rotate(angle, self.resample, self.expand, self.center)
         
 
 def main():
